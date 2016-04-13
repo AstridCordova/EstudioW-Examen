@@ -1,0 +1,84 @@
+mixin encabezado(subtitulo)
+	.subtitulos
+		h2= subtitulo
+		.guion
+
+mixin media-photo(call)
+	case call
+		when 'uno'
+			a(href="#")
+				img(src="assets/images/online-store15.png")
+		when 'dos'
+			a(href="#")
+				img(src="assets/images/mug16.png")
+		when 'tres'
+			a(href="#")
+				img(src="assets/images/photography88.png")
+
+mixin media(call, title)
+	.media-service
+		.row
+			.col-md-2
+				+media-photo(call)
+			.col-md-10
+				h5.nigga=(title)
+				p= parrafo
+
+mixin team-photo(call)
+	case call
+		when 'p-1'
+			a(href="#")
+				img(src="assets/images/member7.jpg")
+		when 'p-2'
+			a(href="#")
+				img(src="assets/images/member8.jpg")
+		when 'p-3'
+			a(href="#")
+				img(src="assets/images/member9.jpg")
+		when 'p-4'
+			a(href="#")
+				img(src="assets/images/member10.jpg").little
+
+mixin team-info(nombre, ocupacion)
+	h5= nombre
+	span= ocupacion
+	p= sed
+	.redes
+		a(href="#").fa.fa-facebook.fa-stack.media-social
+		a(href="#").fa.fa-twitter.fa-stack.media-social
+		a(href="#").fa.fa-google-plus.fa-stack.media-social
+		a(href="#").fa.fa-pinterest.fa-stack.media-social
+		a(href="#").fa.fa-linkedin.fa-stack.media-social
+
+mixin team-media(call, nombre, ocupacion)
+	.row
+		.col-md-6
+			+team-photo(call)
+		.col-md-6
+			+team-info(nombre, ocupacion)
+
+mixin team-media-inverso(call, nombre, ocupacion)
+	.row
+		.col-md-6
+			+team-info(nombre, ocupacion)
+		.col-md-6
+			+team-photo(call)
+
+mixin precio(precio, cdruno, cdrdos, cdrtres, cdrcuatro)
+	.cdr-precio.text-center
+		h2 Starter
+		p.precio= precio
+			span /mo
+		.cdr-icon
+			img(src="assets/images/man88.png")
+			p= cdruno
+		.cdr-icon
+			img(src="assets/images/rectangles29.png")
+			p= cdrdos
+		.cdr-icon
+			img(src="assets/images/database22.png")
+			p= cdrtres
+		.cdr-icon
+			img(src="assets/images/email162.png")
+			p= cdrcuatro
+		a(href="#") ORDER NOW
